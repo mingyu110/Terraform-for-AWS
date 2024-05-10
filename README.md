@@ -1,1 +1,1 @@
-### Guidelines for deploying applications on AWS using Terraform"
+### Guidelines for deploying applications on AWS using Terraform
