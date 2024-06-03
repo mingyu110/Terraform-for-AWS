@@ -1,3 +1,7 @@
+# Remember all .tfvars files should be excluded in version control
+# as there may contain sensitive data, such as password,private keys
+# And this is only demo for how to write .tfvars and use it 
+
 # general 
 region = "ap-southeast-1"
 
