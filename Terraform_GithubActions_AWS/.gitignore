@@ -1,0 +1,10 @@
+.idea/
+.terraform/
+.infracost/
+*.tfstate
+*.tfstate.backup
+.terraform.lock.*
+*.iml
+*.DS_Store
+*.tfvars
+*.log
