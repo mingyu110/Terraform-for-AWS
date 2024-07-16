@@ -1,6 +1,6 @@
 ## The automation of personal website deployment and updates
 
-### BackGround
+### Background
 ___
 - As a cloud computing solutions architect, I would love to assist clients in deploying their application architectures by sharing and implementing cloud-based infrastructures in an agile way. Here's an exemplary demonstration of automating the deployment and updating process for a personal website on AWS through GitHub Actions workflow and Terraform.
 
