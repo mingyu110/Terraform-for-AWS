@@ -6,7 +6,7 @@ ___
 
 ### Solution Architecture
 ___
-![deployment Architecture](assets/deployment architecture.jpg)
+![AWS Infrastructure Diagram](assets/Deployment.jpg)
 - a. The static website can be hosted on AWS S3 and accessed with accelerated performance through the use of CDN ([AWS CloudFront](https://aws.amazon.com/cloudfront/)).
 - b. The management and deployment of certificates are facilitated by [AWS Certificate Manager]( https://aws.amazon.com/certificate-manager/?nc1=h_ls), whereby **ACM** issued certificates are automatically renewed and associated with **AWS CloudFront**.
 - c. **When opening a PR** meanwhile direct push to main branch will be disabled,and **pull_request** workflow will be triggered by PR so that **checkout the code**,**initialize terraform** and **terraform plan** will be executed automatically.
