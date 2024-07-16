@@ -9,7 +9,7 @@ ___
 ![AWS Infrastructure Diagram](assets/Deployment.jpg)
 - a. The static website can be hosted on AWS S3 and accessed with accelerated performance through the use of CDN ([AWS CloudFront](https://aws.amazon.com/cloudfront/)).
 - b. The management and deployment of certificates are facilitated by [AWS Certificate Manager]( https://aws.amazon.com/certificate-manager/?nc1=h_ls), whereby **ACM** issued certificates are automatically renewed and associated with **AWS CloudFront**.
-- c. Save **terraform.tfstate file** on backend such as **AWS S3** **INSTED OF Save it on local file* and controll **who can access** your Terraform backend with IAM.
+- c. Save **terraform.tfstate file** on backend such as **AWS S3** **INSTED OF Save it on local file** and controll **who can access** your Terraform backend with IAM.
 - d. **When opening a PR** meanwhile direct push to main branch will be disabled,and **pull_request** workflow will be triggered by PR so that **checkout the code**,**initialize terraform** and **terraform plan** will be executed automatically.
 - e. **Merging the PR to master** When we get the desired output in the previous step (the terraform plan) ,we will merge the Pull Request(PR) and this **merge_main** workflow will be triggered.
 - f. **Please be noted that** [Infracost](https://dashboard.infracost.io/) which is **a Shift FinOps Left** tool that can let you know your cost impact of Cloud Infrastructure Changes is integrated in the **Pull Request Workflow** in order to control your cost.
