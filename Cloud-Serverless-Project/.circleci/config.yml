@@ -1,0 +1,57 @@
+version: 2.1
+
+jobs:
+  deploy:
+    docker:
+      - image: hashicorp/terraform:latest
+    environment:
+      AWS_DEFAULT_REGION: "us-east-1"
+    steps:
+      - checkout
+      - run:
+          name: Setup AWS credentials
+          command: echo AWS_ACCESS_KEY_ID=$AWS_KEY_ID AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY > ~/.env
+      - run:
+          name: Terraform init
+          command: |
+            cd ./terraform
+            terraform init
+      - run:
+          name: Terraform plan
+          command: |
+            cd ./terraform
+            terraform plan -var-file= variables.tfvars
+      - run:
+          name: Terraform apply
+          command: |
+            cd ./terraform
+            terraform apply -var-file=variables.tfvars
+  destroy:
+    docker:
+      - image: hashicorp/terraform:latest
+    environment:
+      AWS_DEFAULT_REGION: "us-east-1"
+    steps:
+      - checkout
+      - run:
+          name: Setup AWS credentials
+          command: echo AWS_ACCESS_KEY_ID=$AWS_KEY_ID AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY > ~/.env
+      - run:
+          name: Terraform init
+          command: |
+            cd ./terraform
+            terraform init
+      - run:
+          name: Terraform destroy
+          command: |
+            cd ./terraform
+            terraform destroy -var-file=variables.tfvars
+
+workflows:
+  version: 2
+  build-and-deploy:
+      jobs:
+        - deploy
+  destroy-infrastructure:
+    jobs:
+      - destroy
