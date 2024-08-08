@@ -22,6 +22,17 @@ The `Frontend` folder contains the HTML, CSS, and JS files responsible for the u
 
 The `Backend` folder houses the backend logic written in Python. This includes Lambda functions that handle server-side processing and interactions with AWS services. Modify these files to tailor the backend to your specific needs.
 
+### CircleCI Integration
+---
+This project leverages `CircleCI` for continuous integration and deployment. The CI/CD pipeline is configured to automatically build, test, and deploy changes to your AWS Serverless application. 
+
+To integrate CircleCI, please follow these steps:
+
+- Sign up or log in to CircleCI.
+- Connect your GitHub account and add your repository.
+- Configure the `.circleci/config.yml `file to match your project's structure and requirements.
+- Push a commit to trigger the initial build and deployment on CircleCI.
+- Monitor the build status on the CircleCI dashboard.
 
 
 
